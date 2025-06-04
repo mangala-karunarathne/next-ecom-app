@@ -32,13 +32,18 @@ export default function AuthPage() {
             </p>
           </div>
           <div>
-            <Button
-              variant='link'
-              className='text-lg sm:text-xl lg:text-2xl text-gray-500 cursor-pointer'
-              onClick={toggleForm}
-            >
-              {isSignUp ? 'Sign in' : 'Sign up'}
-            </Button>
+            <div className="mt-4 sm:mt-5 flex items-center justify-center">
+              <p className="text-base sm:text-lg lg:text-xl text-gray-600">
+                {isSignUp ? "Already a member?" : "Don't have an account?"}
+              </p>
+              <Button
+                variant="link"
+                className="text-lg sm:text-xl lg:text-2xl text-gray-500 cursor-pointer"
+                onClick={toggleForm}
+              >
+                {isSignUp ? "Sign in" : "Sign up"}
+              </Button>
+            </div>
           </div>
         </div>
       </div>
