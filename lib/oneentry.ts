@@ -48,3 +48,21 @@ async function setupApiClient(): Promise<ReturnType<typeof defineOneEntry>> {
   // Return the initialized API client
   return apiClient;
 }
+
+export async function fetchApiClient(): Promise<
+  ReturnType<typeof defineOneEntry>
+> {
+  // Check if the API client is already initialized
+  if (!apiClient) {
+    // If not, initialize it
+    await setupApiClient();
+  }
+
+  // At this point, `apiClient` should not be null. If it is, throw an error.
+  if (!apiClient) {
+    throw new Error('API client is still null after setup');
+  }
+
+  // Return the initialized API client
+  return apiClient;
+}
