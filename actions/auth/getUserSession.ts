@@ -1,6 +1,6 @@
+"use server";
 import { fetchApiClient } from '@/lib/oneentry';
 import { log } from 'console';
-"use Server";
 import { cookies } from "next/headers";
 
 interface IError {
